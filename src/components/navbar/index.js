@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Link from "next/link";
 import Sticky from "react-sticky-el";
 
@@ -13,7 +14,9 @@ function ToggleNavbar() {
   background.classList.toggle("close-navbar-background-button-show");
 }
 
-function index() {
+function index(props) {
+  const { searchbar } = props;
+
   return (
     <>
       <Sticky className="sticky-navbar-waiting">
@@ -96,9 +99,7 @@ function index() {
                     />
                   </button>
                 </div>
-                <div className="col p-0 pr-1">
-                  <SearchBar />
-                </div>
+                <div className="col p-0 pr-1">{searchbar === true && <SearchBar />}</div>
               </div>
             </nav>
           </div>
@@ -115,5 +116,13 @@ function index() {
     </>
   );
 }
+
+index.propTypes = {
+  searchbar: PropTypes.bool,
+};
+
+index.defaultProps = {
+  searchbar: true,
+};
 
 export default index;

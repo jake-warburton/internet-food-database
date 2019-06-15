@@ -10,9 +10,9 @@ function index(props) {
   const { pagedata, children } = props;
 
   return (
-    <div className="d-flex flex-column layout-default">
+    <div className="d-flex flex-column layout-home">
       <Head pagedata={pagedata} />
-      <Navbar currentpage={pagedata.pageName} />
+      <Navbar currentpage={pagedata.pageName} searchbar={false} />
       {children}
     </div>
   );
