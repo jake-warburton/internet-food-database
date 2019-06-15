@@ -1,0 +1,76 @@
+.sticky-nav-background {
+  background: #0c0c0c;
+}
+
+.sticky-navbar-waiting {
+  position: relative;
+  z-index: 10000;
+}
+
+.nav-item {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.navbar-logo {
+  max-width: 60px;
+}
+.navbar-sm-logo {
+  max-width: 40px;
+  margin: 0px;
+}
+
+.custom-navbar-toggler {
+  border: 0px #000 solid !important;
+}
+
+.navbar-dropdown-area {
+  transition-duration: 0.4s;
+}
+
+.close-navbar-background-button {
+  display: none;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  height: 0px;
+  background-color: #00000000;
+}
+
+.close-navbar-background-button-show {
+  height: 100% !important;
+  background-color: #00000066;
+}
+
+@media (max-width: 990px) {
+  .navbar-custom {
+    padding: 4px 6px 4px 6px !important;
+  }
+  .no-padding-on-mobile {
+    padding: 0px !important;
+  }
+  .nav-item {
+    padding: 10px 20px;
+  }
+  .close-navbar-background-button-show {
+    display: block;
+  }
+  .navbar-custom-closed-height {
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  .navbar-custom-opened-height {
+    max-height: 100vh !important;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 990px) {
+  .navbar-dropdown-area {
+    width: 100%;
+  }
+}
