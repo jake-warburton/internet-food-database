@@ -17,6 +17,7 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "readme": "npx readme",
+    "eslint-init": "npx eslint --init",
     "eslint-check": "eslint --print-config . | eslint-config-prettier-check"
   },
   "dependencies": {
