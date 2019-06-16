@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Router from "next/router";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { view } from "react-easy-state";
 
 import SearchStore from "../../../store/search";
@@ -26,7 +25,9 @@ function DisplayOneResult(name, link, as, tags) {
 }
 
 function DisplayResults(filteredResults) {
-  const itemsView = filteredResults.recipesResults.filteredResults.map(node => DisplayOneResult(node.meta.name, node.link, node.as, node.tags));
+  const itemsView = filteredResults.recipesResults.filteredResults.map(node =>
+    DisplayOneResult(node.meta.name, node.link, node.as, node.tags),
+  );
 
   return (
     <div>
@@ -48,7 +49,9 @@ function index() {
   return (
     <div className="container px-0 py-2">
       {filteredSearchResults.status === 0 && <div>Search term too short</div>}
-      {filteredSearchResults.status === 1 && <div>{DisplayResults(filteredSearchResults)}</div>}
+      {filteredSearchResults.status === 1 && (
+        <div>{DisplayResults(filteredSearchResults)}</div>
+      )}
       {filteredSearchResults.status === 2 && <div>No search made yet</div>}
     </div>
   );

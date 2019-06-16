@@ -1,0 +1,23 @@
+.search-results-holder {
+  transition-duration: 0.4s;
+  position: absolute;
+  padding: 0px 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 10px;
+}
+
+.search-results-body {
+  background: #0c0c0cf7;
+}
+
+.search-results-scrollable-region {
+  max-height: 60vh;
+  overflow: auto;
+}
+
+.search-results-closed-height {
+  max-height: 0px;
+  overflow: hidden;
+  opacity: 0;
+}

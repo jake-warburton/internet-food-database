@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 import Sticky from "react-sticky-el";
 
-import SearchBar from "../search-components/search-bar";
+import SearchBarAndResultsContainer from "../search-components/search-bar-and-results-container";
 
 import "./style.css";
 
@@ -27,7 +27,7 @@ function index(props) {
                 <Link prefetch href="/">
                   <a>
                     <img
-                      src="/static/images/misc/logo_1.png"
+                      src="/static/images/logo.png"
                       alt="Dota logo"
                       className="d-none d-lg-block navbar-sm-logo"
                     />
@@ -99,7 +99,9 @@ function index(props) {
                     />
                   </button>
                 </div>
-                <div className="col p-0 pr-1">{searchbar === true && <SearchBar />}</div>
+                <div className="col p-0 pr-1">
+                  {searchbar === true && <SearchBarAndResultsContainer />}
+                </div>
               </div>
             </nav>
           </div>

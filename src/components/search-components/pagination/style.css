@@ -1,0 +1,12 @@
+.search-pagination {
+  font-weight: 700;
+}
+
+.pagination-button {
+  background: #18171a;
+  box-shadow: inset 0px -2px 4px #121212;
+  border-radius: 6px;
+  color: #eee;
+  cursor: pointer;
+  padding: 10px 20px;
+}
