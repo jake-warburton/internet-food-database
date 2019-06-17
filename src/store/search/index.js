@@ -36,15 +36,21 @@ const index = store({
   UpdateCurrentOffset(newOffset) {
     index.currentOffset = newOffset;
     //  Trigger filter function to apply new offset
-    index.FilterSearchResults(index.searchTerm);
+    index.PrivateFilterSearchResults(index.searchTerm);
   },
   filteredSearchResults: {
     status: 2,
     message: "No search entered.",
     count: 0,
   },
-  FilterSearchResults(searchString = "") {
+  UpdateSearchTerm(searchString = "") {
     index.searchTerm = searchString;
+    //  Update offset to 0, as we are performing a new search so we want to start from the beginning
+    index.UpdateCurrentOffset(0);
+    //  Trigger filter function to apply new filter
+    index.PrivateFilterSearchResults();
+  },
+  PrivateFilterSearchResults() {
     const { searchTerm } = index;
     let resultsCount = justNamesAndTags.length;
 
@@ -72,6 +78,11 @@ const index = store({
     });
 
     resultsCount = filteredRecipes.length;
+
+    //  Update the offset to 0 if the amount of recipes is fewer than the offset
+    if (resultsCount < index.currentOffset) {
+      index.currentOffset = 0;
+    }
 
     const returnedRecipes = filteredRecipes
       .slice(index.currentOffset, index.currentOffset + index.resultsPerPage)

@@ -5,7 +5,7 @@ import "./style.css";
 
 import SearchStore from "../../../store/search";
 
-const config = { mass: 2, tension: 3800, friction: 100 };
+const config = { mass: 2, tension: 4800, friction: 200 };
 
 const OneResult = (name, tags, link, as) => (
   <div className="one-recipe-result-holder">{name}</div>
@@ -37,27 +37,25 @@ function index() {
 
   return (
     <>
-      {trail.map(({ x, height, ...rest }, resultKey) => {
-        return (
-          <animated.div
-            key={items[resultKey].meta.slug}
-            className="trails-text"
-            style={{
-              ...rest,
-              transform: x.interpolate(x => `translate3d(0,${x}px,0)`),
-            }}
-          >
-            <animated.div style={{ height }}>
-              {OneResult(
-                items[resultKey].meta.name,
-                items[resultKey].meta.tags,
-                items[resultKey].link,
-                items[resultKey].as,
-              )}
-            </animated.div>
+      {trail.map(({ x, height, ...rest }, resultKey) => (
+        <animated.div
+          key={items[resultKey].meta.slug}
+          className="trails-text"
+          style={{
+            ...rest,
+            transform: x.interpolate(x => `translate3d(0,${x}px,0)`),
+          }}
+        >
+          <animated.div style={{ height }}>
+            {OneResult(
+              items[resultKey].meta.name,
+              items[resultKey].meta.tags,
+              items[resultKey].link,
+              items[resultKey].as,
+            )}
           </animated.div>
-        );
-      })}
+        </animated.div>
+      ))}
     </>
   );
 }

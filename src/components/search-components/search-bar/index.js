@@ -7,7 +7,7 @@ import SearchStore from "../../../store/search";
 
 function SendSearchRequest(e, searchTerm) {
   e.preventDefault();
-  SearchStore.FilterSearchResults(searchTerm);
+  SearchStore.UpdateSearchTerm(searchTerm);
 }
 
 function index() {
