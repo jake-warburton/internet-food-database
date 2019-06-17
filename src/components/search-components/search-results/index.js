@@ -3,6 +3,9 @@ import Link from "next/link";
 import Router from "next/router";
 import { view } from "react-easy-state";
 
+//  import a function
+import { search } from "../search";
+
 import SearchStore from "../../../store/search";
 
 import "./style.css";
@@ -25,9 +28,10 @@ function DisplayOneResult(name, link, as, tags) {
 }
 
 function DisplayResults(filteredResults) {
-  const itemsView = filteredResults.recipesResults.filteredResults.map(node =>
-    DisplayOneResult(node.meta.name, node.link, node.as, node.tags),
-  );
+  const itemsView = filteredResults.recipesResults.filteredResults.map(node => {
+    const { link, as, tags } = node;
+    return DisplayOneResult(node.meta.name, link, as, tags);
+  });
 
   return (
     <div>
@@ -45,6 +49,9 @@ function DisplayResults(filteredResults) {
 
 function index() {
   const { filteredSearchResults } = SearchStore;
+
+  const myString = search();
+  console.log("my string: ", myString);
 
   return (
     <div className="container px-0 py-2">
