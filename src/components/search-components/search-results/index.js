@@ -3,9 +3,6 @@ import Link from "next/link";
 import Router from "next/router";
 import { view } from "react-easy-state";
 
-//  import a function
-import { search } from "../search";
-
 import SearchStore from "../../../store/search";
 
 import "./style.css";

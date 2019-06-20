@@ -14,11 +14,12 @@
   "license": "ISC",
   "scripts": {
     "dev": "node server.js",
-    "build": "next build",
+    "build": "jest | next build",
     "start": "NODE_ENV=production node server.js",
     "readme": "npx readme",
     "eslint-init": "npx eslint --init",
-    "eslint-check": "eslint --print-config . | eslint-config-prettier-check"
+    "eslint-check": "eslint --print-config . | eslint-config-prettier-check",
+    "test": "jest"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -35,6 +36,11 @@
     "react-sticky-el": "^1.0.20"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "babel-jest": "^24.1.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "enzyme": "^3.4.3",
+    "enzyme-adapter-react-16": "^1.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.3.0",
@@ -42,6 +48,10 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
+    "jest": "^24.1.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-hot-loader": "^4.11.1",
+    "react-test-renderer": "^16.4.2",
     "readme-md-generator": "^0.2.1",
     "webpack-pwa-manifest": "^4.0.0"
   }

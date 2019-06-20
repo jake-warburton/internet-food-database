@@ -3,7 +3,7 @@ import { useTrail, animated } from "react-spring";
 import { view } from "react-easy-state";
 import "./style.css";
 
-import SearchStore from "../../store/search";
+import SearchStore from "../../../store/search";
 
 const config = { mass: 2, tension: 4800, friction: 200 };
 

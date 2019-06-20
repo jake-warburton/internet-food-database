@@ -52,7 +52,9 @@ const index = store({
   },
   PrivateFilterSearchResults() {
     const { searchTerm } = index;
-    let resultsCount = justNamesAndTags.length;
+
+    const unfilteredRecipes = justNamesAndTags;
+    let resultsCount = unfilteredRecipes.length;
 
     //  If the search term is not very long, it will return too many results so exit.
     if (searchTerm.length < 1) {
@@ -66,8 +68,8 @@ const index = store({
       return false;
     }
 
-    //  Heroes filtered and returned
-    const filteredRecipes = justNamesAndTags.filter(node => {
+    //  Recipes filtered and returned
+    const filteredRecipes = unfilteredRecipes.filter(node => {
       if (node.tags.includes(searchTerm.toLowerCase())) {
         return true;
       }
