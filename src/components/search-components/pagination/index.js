@@ -22,10 +22,10 @@ function index() {
   }
 
   return (
-    <div className="w-100 d-flex justify-content-center align-items-center mt-2 py-2 search-pagination">
+    <div className="w-100 d-flex justify-content-center align-items-center mt-2 py-2 pagination__search-pagination">
       {displayPrev >= 0 && (
         <div
-          className="pagination-button mx-2"
+          className="mx-2 pagination__pagination-button"
           role="button"
           tabIndex={0}
           onClick={() => SearchStore.UpdateCurrentOffset(displayPrev)}
@@ -36,7 +36,7 @@ function index() {
       )}
       {displayNext >= 0 && (
         <div
-          className="pagination-button mx-2"
+          className="mx-2 pagination__pagination-button"
           role="button"
           tabIndex={0}
           onClick={() => SearchStore.UpdateCurrentOffset(displayNext)}

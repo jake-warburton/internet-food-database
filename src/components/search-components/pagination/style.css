@@ -1,8 +1,8 @@
-.search-pagination {
+.pagination__search-pagination {
   font-weight: 700;
 }
 
-.pagination-button {
+.pagination__pagination-button {
   background: #18171a;
   box-shadow: inset 0px -2px 4px #121212;
   border-radius: 6px;

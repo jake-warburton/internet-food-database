@@ -2,32 +2,6 @@ import { store } from "react-easy-state";
 
 import justNamesAndTags from "../../../static/just_names_and_tags";
 
-/*
-How I converted names into slugs
-
-  const recipeNames = recipes.map(node => {
-    node.slug = node.name
-      .replace(/ /g, "_")
-      .replace(/-/g, "_")
-      .replace(/\+/g, "plus")
-      .replace(/\(/g, "_")
-      .replace(/\)/g, "_")
-      .replace(/, /g, "_")
-      .replace(/,/g, "_")
-      .replace(/'/g, "")
-      .replace(/"/g, "")
-      .replace(/&/g, "and")
-      .replace(/£/g, "pound")
-      .replace(/\$/g, "dollar")
-      .replace(/#/g, "hash")
-      .replace(/\?/g, "_")
-      .replace(/</g, "_")
-      .replace(/>/g, "_")
-      .toLowerCase();
-
-  });
-*/
-
 const index = store({
   recipes: justNamesAndTags,
   searchTerm: "",

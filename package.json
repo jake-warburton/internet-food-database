@@ -18,8 +18,29 @@
     "start": "NODE_ENV=production node server.js",
     "readme": "npx readme",
     "eslint-init": "npx eslint --init",
-    "eslint-check": "eslint --print-config . | eslint-config-prettier-check",
-    "test": "jest"
+    "eslint": "eslint --print-config . | eslint-config-prettier-check",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "*.js",
+      "*.jsx",
+      "*.ts",
+      "*.tsx"
+    ],
+    "coveragePathIgnorePatterns": [
+      ".next",
+      "/node_modules"
+    ],
+    "coverageTheshold": {
+      "global": {
+        "statements": 100,
+        "branches": 100,
+        "functions": 100,
+        "lines": 100
+      }
+    }
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
